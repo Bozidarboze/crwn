@@ -35,6 +35,8 @@ class SignIn extends React.Component {
     this.setState({ [name]: value });
   };
 
+  buttonStyle = { padding: "15px 35px" };
+
   render() {
     return (
       <div className='sign-in'>
@@ -45,8 +47,10 @@ class SignIn extends React.Component {
           <FormInput name='email' type='email' value={this.state.email} required onChange={this.handleChange} label='Email' />
           <FormInput name='password' type='password' value={this.state.password} required onChange={this.handleChange} label='Password' />
           <div className='buttons'>
-            <CustomButton type='submit'>Sign In</CustomButton>
-            <CustomButton type='button' onClick={signInWithGoogle} isGoogleSignIn>
+            <CustomButton style={this.buttonStyle} type='submit'>
+              Sign In
+            </CustomButton>
+            <CustomButton style={this.buttonStyle} type='button' onClick={signInWithGoogle} isGoogleSignIn>
               Sign In With Google
             </CustomButton>
           </div>
